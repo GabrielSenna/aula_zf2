@@ -10,6 +10,7 @@ use Zend\Paginator\Paginator,
 
 use LivrariaAdmin\Form\Categoria as FrmCategoria;
 
+
 class CategoriasController extends AbstractActionController{
     
     /**
@@ -25,7 +26,7 @@ class CategoriasController extends AbstractActionController{
         $page = $this->params()->fromRoute('page');
         $paginator = new Paginator(new ArrayAdapter($list));
         $paginator->setCurrentPageNumber($page);
-        $paginator->setDefaultItemCountPerPage(1);
+        $paginator->setDefaultItemCountPerPage(10);
         return new ViewModel(['data'=>$paginator, 'page'=>$page]);
     }
     
@@ -38,7 +39,8 @@ class CategoriasController extends AbstractActionController{
             $form->setData($request->getPost());
             if($form->isValid()){
                 //Método de inserção
-                
+                $service = $this->getServiceLocator()->get(\Livraria\Service\Categoria::class);
+                $service->insert($request->getPost()->toArray());
                 return $this->redirect()->toRoute('livraria-admin',['controller'=>'categorias']);
             }
         }

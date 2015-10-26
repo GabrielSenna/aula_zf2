@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c28a88b534e26b50495bd11b5c413f4d",
+    "hash": "21b8518d3d83b6b28f87c35f9adf393a",
     "content-hash": "f77454ddef81b897f680eabbc9d8f73b",
     "packages": [
         {
@@ -81,12 +81,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "1c3483678ab767c3e21d3a96d6dd1006b327d425"
+                "reference": "2a73ce166d5e02f0b09ceb10776027d5b63de823"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/1c3483678ab767c3e21d3a96d6dd1006b327d425",
-                "reference": "1c3483678ab767c3e21d3a96d6dd1006b327d425",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/2a73ce166d5e02f0b09ceb10776027d5b63de823",
+                "reference": "2a73ce166d5e02f0b09ceb10776027d5b63de823",
                 "shasum": ""
             },
             "require": {
@@ -107,8 +107,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Cache\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Cache\\": "lib/Doctrine/Common/Cache"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -143,7 +143,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-10-08 07:32:30"
+            "time": "2015-10-25 10:46:21"
         },
         {
             "name": "doctrine/collections",
@@ -439,12 +439,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineORMModule.git",
-                "reference": "5603fda811b689ebe6a2ee99309e95477f613f0e"
+                "reference": "34147cf7ea00ffa95cecab2db083d5c864939115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineORMModule/zipball/5603fda811b689ebe6a2ee99309e95477f613f0e",
-                "reference": "5603fda811b689ebe6a2ee99309e95477f613f0e",
+                "url": "https://api.github.com/repos/doctrine/DoctrineORMModule/zipball/34147cf7ea00ffa95cecab2db083d5c864939115",
+                "reference": "34147cf7ea00ffa95cecab2db083d5c864939115",
                 "shasum": ""
             },
             "require": {
@@ -509,7 +509,7 @@
                 "orm",
                 "zf2"
             ],
-            "time": "2015-10-05 23:13:48"
+            "time": "2015-10-24 07:15:54"
         },
         {
             "name": "doctrine/inflector",
@@ -1118,12 +1118,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "be8f7b9eacf8243940f8412f8b4a9a434c73dd7b"
+                "reference": "625f8c345606ed0f3a141dfb88f4116f0e22978e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/be8f7b9eacf8243940f8412f8b4a9a434c73dd7b",
-                "reference": "be8f7b9eacf8243940f8412f8b4a9a434c73dd7b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/625f8c345606ed0f3a141dfb88f4116f0e22978e",
+                "reference": "625f8c345606ed0f3a141dfb88f4116f0e22978e",
                 "shasum": ""
             },
             "require": {
@@ -1182,7 +1182,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-22 09:05:37"
+            "time": "2015-10-23 06:48:33"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1618,12 +1618,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "89a795226477f66745e8ea10415e769304114920"
+                "reference": "461cdb15a77117d0d1b32019fc19cf4b94cd2cc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/89a795226477f66745e8ea10415e769304114920",
-                "reference": "89a795226477f66745e8ea10415e769304114920",
+                "url": "https://api.github.com/repos/symfony/console/zipball/461cdb15a77117d0d1b32019fc19cf4b94cd2cc8",
+                "reference": "461cdb15a77117d0d1b32019fc19cf4b94cd2cc8",
                 "shasum": ""
             },
             "require": {
@@ -1666,7 +1666,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-12 10:31:17"
+            "time": "2015-10-23 14:52:08"
         },
         {
             "name": "symfony/yaml",
