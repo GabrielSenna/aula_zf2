@@ -40,6 +40,8 @@ return array(
         'invokables' => array(
             'Livraria\Controller\Index' => \Livraria\Controller\IndexController::class,
             'categorias' => \LivrariaAdmin\Controller\CategoriasController::class,
+            'livros' => \LivrariaAdmin\Controller\LivrosController::class,
+            'users' => \LivrariaAdmin\Controller\UsersController::class,
         ),
     ),
     'view_manager' => array(
