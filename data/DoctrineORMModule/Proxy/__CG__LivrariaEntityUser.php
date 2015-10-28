@@ -224,6 +224,17 @@ class User extends \Livraria\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function getSalt()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSalt', array());
+
+        return parent::getSalt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function setId($id)
     {
 
@@ -263,6 +274,17 @@ class User extends \Livraria\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPassword', array($password));
 
         return parent::setPassword($password);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function encryptPassword($password)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'encryptPassword', array($password));
+
+        return parent::encryptPassword($password);
     }
 
     /**

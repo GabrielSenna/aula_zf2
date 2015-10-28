@@ -65,6 +65,9 @@ class User {
         return $this->password;
     }
 
+    function getSalt() {
+        return $this->salt;
+    }
 
     function setId($id) {
         $this->id = $id;
@@ -82,12 +85,17 @@ class User {
     }
 
     function setPassword($password) {
+        $hashSenha = $this->encryptPassword($password);
+        $this->password = $hashSenha;
+        return $this;
+    }
+    
+    public function encryptPassword($password){
         $hashSenha = hash('sha512', $password.$this->salt);
         for($i = 0; $i<64000; $i++){
             $hashSenha = hash('sha512', $hashSenha);
         }
-        $this->password = $hashSenha;
-        return $this;
+        return $hashSenha;
     }
 
     public function toArray(){
@@ -99,5 +107,5 @@ class User {
             'salt'=> $this->salt,
         ];
     }
-
+    
 }

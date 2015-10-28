@@ -21,6 +21,8 @@ use Livraria\Service\User as UserService;
 
 use LivrariaAdmin\Form\Livro as LivroFrm;
 
+use Livraria\Auth\Adapter as AuthAdapter;
+
 class Module
 {
     
@@ -57,6 +59,9 @@ class Module
                 },
                 'Livraria\Service\User'=> function($service){
                     return new UserService($service->get('Doctrine\ORM\EntityManager'));
+                },
+                'Livraria\Auth\Adapter'=> function($service){
+                    return new AuthAdapter($service->get('Doctrine\ORM\EntityManager'));
                 },
                 'LivrariaAdmin\Form\Livro'=> function($service){
                     $em = $service->get(\Doctrine\ORM\EntityManager::class);
