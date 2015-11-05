@@ -23,6 +23,12 @@ use LivrariaAdmin\Form\Livro as LivroFrm;
 
 use Livraria\Auth\Adapter as AuthAdapter;
 
+use \Zend\ModuleManager\ModuleManager;
+
+use \Zend\Authentication\AuthenticationService;
+
+use Zend\Authentication\Storage\Session as SessionStorage;
+
 class Module
 {
     
@@ -42,6 +48,21 @@ class Module
             ),
         );
     }
+    
+    public function init(ModuleManager $moduleManager){
+        $sharedEvents = $moduleManager->getEventManager()->getSharedManager();
+        $sharedEvents->attach("Zend\Mvc\Controller\AbstractActionController",'dispatch', function($e){
+           $auth = new AuthenticationService;
+           $auth->setStorage(new SessionStorage("LivrariaAdmin"));
+           $controller = $e->getTarget();
+           $matchedRoute = $controller->getEvent()->getRouteMatch()->getMatchedRouteName();
+           
+           if(!$auth->hasIdentity() && ($matchedRoute == 'livraria-admin' or $matchedRoute == 'livraria-admin-interna')){
+               return $controller->redirect()->toRoute('livraria-admin-auth');
+           }
+        }, 100);
+    }
+    
     public function getServiceConfig(){
         return [
             'factories'=> [

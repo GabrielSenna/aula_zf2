@@ -44,6 +44,16 @@ return array(
                     ),
                 ),
             ),
+            'livraria-admin-logout' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route'    => '/admin/auth/logout',
+                    'defaults' => array(
+                        'action'     => 'logout',
+                        'controller' => 'livraria-admin-auth',
+                    ),
+                ),
+            ),
         ),
     ),
     'controllers' => array(

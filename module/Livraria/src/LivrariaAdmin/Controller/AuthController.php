@@ -43,4 +43,12 @@ class AuthController extends AbstractActionController{
         }
         return new ViewModel(['form'=>$form, 'error'=>$error]);
     }
+    
+    public function logoutAction(){
+        $auth = new AuthenticationService();
+        $auth->setStorage(new SessionStorage('LivrariaAdmin'));
+        $auth->clearIdentity();
+        
+        return $this->redirect()->toRoute('livraria-admin-auth');
+    }
 }
